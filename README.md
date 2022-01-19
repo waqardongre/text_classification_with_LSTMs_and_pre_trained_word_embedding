@@ -17,7 +17,7 @@ pip install fastapi uvicorn
 ### Run below in your linux based terminal  to install tensorflow if not installed else skip
 pip install tensorflow==2.7.0
 
-### Go to the project directory in in your linux based terminal in Linux based terminal
+### Go to the project directory in in your linux based terminal
 cd /mnt/c/Users/<username>/path_to_your_project
 
 ### To run the developed rest api, run below command in in your linux based terminal 
