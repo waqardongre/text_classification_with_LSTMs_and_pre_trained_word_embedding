@@ -1,6 +1,6 @@
 python-multipart
 fastapi
-tensorflow==2.7.0
+tensorflow==2.0.0
 pickle
 tensorflow.keras.layers
 numpy
