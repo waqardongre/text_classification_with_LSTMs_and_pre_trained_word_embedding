@@ -1,6 +1,5 @@
 python-multipart
 fastapi
 tensorflow==2.0.0
-tensorflow.keras.layers
 numpy
 uvicorn
