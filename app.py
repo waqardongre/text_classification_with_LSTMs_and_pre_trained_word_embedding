@@ -9,7 +9,7 @@ import numpy as np
 
 app = FastAPI()
 
-@app.get('/', response_class=HTMLResponse)
+@app.get('/predict', response_class=HTMLResponse)
 def take_inp():
     return '''
         <html>
@@ -27,7 +27,7 @@ def take_inp():
         </html>
         </body>'''
 
-@app.post('/')
+@app.post('/predict')
 def predict(text:str = Form(...)):
     
     loaded_model = tf.keras.models.load_model('LSTM_h5_model_4_acc_80_perc.h5') #load the saved model 
@@ -50,7 +50,7 @@ def predict(text:str = Form(...)):
     t_sentiment = class_names[int(0.5 > probabilities[0][0])]
 
     return { #return the dictionary for endpoint
-        "ACTUALL SENTENCE": text,
-        "PREDICTED SENTIMENT": t_sentiment
+        "your_review": text,
+        "predicted_sentiment": t_sentiment
     }
     #return '''Your input: \''''+ str(text) + '''\' and your review is predicted as: ''' + str(t_sentiment)
