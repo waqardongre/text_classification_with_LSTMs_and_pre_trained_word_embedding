@@ -49,8 +49,8 @@ def predict(text:str = Form(...)):
     class_names = ['Positive', 'Negative'] # as defind in the model 0 for positive and 1 for negative
     t_sentiment = class_names[int(0.5 > probabilities[0][0])]
 
-    # return { #return the dictionary for endpoint
-    #     "ACTUALL SENTENCE": text,
-    #     "PREDICTED SENTIMENT": t_sentiment
-    # }
-    return '''Your input: \''''+ str(text) + '''\' and your review is predicted as: ''' + str(t_sentiment)
+    return { #return the dictionary for endpoint
+        "ACTUALL SENTENCE": text,
+        "PREDICTED SENTIMENT": t_sentiment
+    }
+    #return '''Your input: \''''+ str(text) + '''\' and your review is predicted as: ''' + str(t_sentiment)
