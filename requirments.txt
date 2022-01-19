@@ -1,0 +1,7 @@
+fastapi
+starlette.responses
+tensorflow=2.7.0
+pickle
+tensorflow.keras.layers
+numpy
+uvicorn
