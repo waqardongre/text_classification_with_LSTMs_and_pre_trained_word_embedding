@@ -9,6 +9,12 @@ import numpy as np
 
 app = FastAPI()
 
+
+@app.get('/')
+def basic_view():
+    return {"WELCOME": "GO TO /docs route, or /post or send post request to /predict "}
+
+
 @app.get('/predict', response_class=HTMLResponse)
 def take_inp():
     return '''
