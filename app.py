@@ -28,7 +28,8 @@ def take_inp():
         <p>Sample inputs:</p>
         <p>this movie is awesome</p>
         <p>very slow movie</p>
-        <p>Deep learning model: LSTMs with 79'%' validation accuracy on 20'%' data with pre-trained word embeddings</p>
+        <p>Deep learning model: LSTMs with pre-trained word embeddings having 79'%' validation accuracy <br>
+        on 20'%' data of ACLImdb dataset of 25000 review files</p>
         <p>By: Waqar Dongre</p>
         <p>Email: waqardongre@gmail.com</p>
         </html>
