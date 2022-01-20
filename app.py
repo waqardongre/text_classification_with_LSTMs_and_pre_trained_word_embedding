@@ -21,13 +21,14 @@ def take_inp():
         <html>
         <body>
         <form method="post" class="form">
-        <p> Enter your review below: </p>
-        <input maxlength="1000" name="text" type="text" value="this movie is awesome" />
+        <label>Enter your review:</label>
+        <textarea name="text" rows="2" cols="50">this movie is awesome</textarea>
         <input type="submit" value="Predict"/>
+        </form>
         <p>Sample inputs:</p>
         <p>this movie is awesome</p>
         <p>very slow movie</p>
-        <p>Deep learning model: LSTMs with 79'%' accuracy on 20'%' data with pre-trained word embedding 'glove.6B.zip'</p>
+        <p>Deep learning model: LSTMs with 79'%' validation accuracy on 20'%' data with pre-trained word embeddings</p>
         <p>By: Waqar Dongre</p>
         <p>Email: waqardongre@gmail.com</p>
         </html>
