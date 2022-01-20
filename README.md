@@ -1,6 +1,6 @@
 ## This is text classification project with LSTMs and pre-trained word embeddings like glove.6B.zip.
 ## Developed a RESTful server/API which can perform predictions on the given input text in the respective API html form using the model. 
-## The development and deployment of the program is a Linux environment. Used WSL Ubuntu for Windows to develop and run this program.
+## The development and deployment of the program is a Linux environment - WSL Ubuntu using Git CLI. Used WSL Ubuntu for Windows to develop and run this program.
 
 
 
