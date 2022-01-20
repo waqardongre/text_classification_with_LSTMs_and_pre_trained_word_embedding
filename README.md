@@ -1,4 +1,4 @@
-### This is a text classification project with LSTMs and pre-trained word embeddings like glove.6B.zip.
+### This is a text classification project repository with LSTMs and pre-trained word embeddings like glove.6B.zip.
 ### Developed a RESTful server/API which can perform predictions on the given input text in the respective API html form using the model. 
 ### The development and deployment of the program is a Linux environment - WSL Ubuntu with Git CLI. Used Git CLI to run this program on local host and to deploy on Github.
 
@@ -25,4 +25,4 @@ For WSL: cd /mnt/c/Users/<username>/path_to_your_project
 #### To run the developed rest api, run below command in in your linux based terminal 
 uvicorn app:app --reload
 
-#### It will show the hosted link in your terminal's output, copy and paste it in your browser like 'http://127.0.0.1:8000' you have to add '/predict' after it so it becomes 'http://127.0.0.1:8000/predict' and you will see the form in your browser which will predict the text which you will enter in the given textbox. to predict results you have to just click on the 'predict' submit button. Please check screenshots share with the project repostory.
+#### It will show the hosted link in your terminal's output, copy and paste it in your browser like 'http://127.0.0.1:8000' you have to add '/predict' after it so it becomes 'http://127.0.0.1:8000/predict' and you will see the form in your browser which will predict the text which you will enter in the given textbox. to predict results you have to just click on the 'predict' submit button. Screenshots of running restAPI on uvicorn's local host of WSL's Ubuntu of my PC shared with the project repository.
