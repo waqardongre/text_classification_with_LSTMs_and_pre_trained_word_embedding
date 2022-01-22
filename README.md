@@ -27,6 +27,6 @@ cd /mnt/c/Users/\<username>\/path_to_your_project
 #### To run the developed rest api, run below command in in your linux based terminal 
 uvicorn app:app --reload
 
-#### It will show the hosted link in your terminal's output, copy and paste it in your browser like 'http://127.0.0.1:8000' you have to add '/predict' after it so it becomes 'http://127.0.0.1:8000/predict' and you will see the form in your browser which will predict the text which you will enter in the given textbox. to predict results you have to just click on the 'predict' submit button. Screenshots of running REST API on local host in WSL's Ubuntu on my PC are shared with the project repository. 
+#### It will show the hosted link like 'http://127.0.0.1:8000' in your terminal's output, copy and paste it in your browser, you have to add '/predict' after it so it becomes 'http://127.0.0.1:8000/predict' and you will see the form in your browser which will predict the text which you will enter in the given textbox. to predict results you have to just click on the 'predict' submit button. Screenshots of running REST API on local host in WSL's Ubuntu on my PC are shared with the project repository. 
 
 #### Thank you very much.
