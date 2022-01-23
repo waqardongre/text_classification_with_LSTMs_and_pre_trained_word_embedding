@@ -38,7 +38,7 @@ def take_inp():
 @app.post('/predict')
 def predict(text:str = Form(...)):
     
-    loaded_model = tf.keras.models.load_model('LSTM_h5_model_4_acc_80_perc.h5') #load the saved model 
+    loaded_model = tf.keras.models.load_model('LSTM_h5_model_8.h5') #load the saved model. LSTM_h5_model_8 have Accuracy of 88.08%.
 
     from_disk = pickle.load(open("vectorizer.pkl", "rb"))
     from_disk['config']["vocabulary"] = "imdb.vocab" # set you vocabulary file path
