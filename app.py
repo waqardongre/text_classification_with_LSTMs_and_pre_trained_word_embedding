@@ -28,8 +28,8 @@ def take_inp():
         <p>Sample inputs:</p>
         <p>this movie is awesome</p>
         <p>very slow movie</p>
-        <p>Deep learning model: LSTMs with pre-trained word embeddings having 79'%' validation accuracy <br>
-        on 20'%' data of ACLImdb dataset of 25000 review files</p>
+        <p>Deep learning model: LSTMs with pre-trained word embeddings having 88.08'%' validation accuracy <br>
+        trained on 95'%' data of ACLImdb dataset of 25000 text review files</p>
         <p>By: Waqar Dongre</p>
         <p>Email: waqardongre@gmail.com</p>
         </html>
@@ -54,8 +54,8 @@ def predict(text:str = Form(...)):
     probabilities = end_to_end_model.predict(
         [[text]]
     )
-    class_names = ['Positive', 'Negative'] # as defind in the model 0 for positive and 1 for negative
-    t_sentiment = class_names[int(0.5 > probabilities[0][0])]
+    class_names = ['Positive', 'Negative']
+    t_sentiment = class_names[int(0.5 < probabilities[0][0])]
 
     return { #return the dictionary for endpoint
         "your_review": text,
