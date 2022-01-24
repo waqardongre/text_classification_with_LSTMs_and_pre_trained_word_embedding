@@ -22,12 +22,12 @@ def take_inp():
         <body>
         <form method="post" class="form">
         <label>Enter your review:</label>
-        <textarea name="text" rows="2" cols="50">this movie is awesome</textarea>
+        <textarea name="text" rows="2" cols="50"> awesome movie </textarea>
         <input type="submit" value="Predict"/>
         </form>
         <p>Sample inputs:</p>
-        <p>this movie is awesome</p>
-        <p>very slow movie</p>
+        <p> awesome movie </p>
+        <p> worst show ever </p>
         <p>Deep learning model: LSTMs with pre-trained word embeddings having 88.08'%' validation accuracy <br>
         trained on 95'%' data of ACLImdb dataset of 25000 text review files</p>
         <p>By: Waqar Dongre</p>
@@ -46,16 +46,17 @@ def predict(text:str = Form(...)):
     vectorizer = TextVectorization.from_config(from_disk['config'])
     vectorizer.set_weights(from_disk['weights'])
     
-    string_input = keras.Input(shape=(1,), dtype="string")
-    x = vectorizer(string_input)
-    preds = loaded_model(x)
-    end_to_end_model = keras.Model(string_input, preds)
+    x = vectorizer(np.array([[s] for s in [text]])).numpy()
 
-    probabilities = end_to_end_model.predict(
-        [[text]]
-    )
+    preds = 0
+    for i in range(10):
+        preds += loaded_model.predict(x)[0][0]
+
+    preds /= 10
+
+
     class_names = ['Positive', 'Negative']
-    t_sentiment = class_names[int(0.5 < probabilities[0][0])]
+    t_sentiment = class_names[int(0.5 < preds)]
 
     return { #return the dictionary for endpoint
         "your_review": text,
