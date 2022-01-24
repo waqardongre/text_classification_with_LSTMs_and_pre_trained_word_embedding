@@ -48,18 +48,14 @@ def predict(text:str = Form(...)):
     
     x = vectorizer(np.array([[s] for s in [text]])).numpy()
 
-    preds = 0
-    for i in range(10):
-        preds += loaded_model.predict(x)[0][0]
-
-    preds /= 10
-
+    pred = loaded_model.predict(x)[0][0]
 
     class_names = ['Positive', 'Negative']
     t_sentiment = class_names[int(0.5 < preds)]
 
     return { #return the dictionary for endpoint
         "your_review": text,
-        "predicted_sentiment": t_sentiment
+        "predicted_sentiment": t_sentiment,
+        "probabs_closer_to_0_positive_closer_to_1_negative": preds
     }
     #return '''Your input: \''''+ str(text) + '''\' and your review is predicted as: ''' + str(t_sentiment)
