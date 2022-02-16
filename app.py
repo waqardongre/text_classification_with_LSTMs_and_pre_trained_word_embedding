@@ -46,7 +46,7 @@ def predict(text:str = Form(...)):
     vectorizer = TextVectorization.from_config(from_disk['config'])
     vectorizer.set_weights(from_disk['weights'])
     
-    x = vectorizer(np.array([[s] for s in [text]])).numpy()
+    x = vectorizer(np.array([[s] for s in [text.trim()]])).numpy()
 
     pred = loaded_model.predict(x)[0][0]
 
