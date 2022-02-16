@@ -51,11 +51,11 @@ def predict(text:str = Form(...)):
     pred = loaded_model.predict(x)[0][0]
 
     class_names = ['Positive', 'Negative']
-    t_sentiment = class_names[int(0.5 < preds)]
+    t_sentiment = class_names[int(0.5 < pred)]
 
     return { #return the dictionary for endpoint
         "your_review": text,
         "predicted_sentiment": t_sentiment,
-        "probabs_closer_to_0_positive_closer_to_1_negative": preds
+        "probabs_closer_to_0_positive_closer_to_1_negative": pred
     }
     #return '''Your input: \''''+ str(text) + '''\' and your review is predicted as: ''' + str(t_sentiment)
